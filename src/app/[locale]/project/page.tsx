@@ -1,24 +1,33 @@
+'use client'
 import React from 'react';
 import {AiOutlineArrowRight} from "react-icons/ai";
+import Language from "@/components/Language";
+import {useLocale} from "use-intl";
 
 const people = [
     { name: '2024', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
     // More people...
 ]
 const Page = () => {
+    // const localActive = useLocale();
     return (
-        <div className="h-screen text-white bg-blue">
+        <div className="h-screen text-white">
             <div className="mx-auto max-w-7xl">
                 <div className="bg-gray-900 py-10">
                     <div className="px-4 sm:px-6 lg:px-8">
                         <div className="sm:flex sm:items-center">
                             <div className="sm:flex-auto">
-                                <a href="/public" className=" flex items-center text-base font-semibold leading-6 text-green py-3">
+                                <div className="flex justify-between">
+                                    <a href="/"
+                                       className=" flex items-center text-base font-semibold leading-6 text-green py-3">
                                         <AiOutlineArrowRight size={15} className='-rotate-180'/>
-                                    <h1 className="px-2 ">Toure Aboubacar</h1>
-                                </a>
+                                        <h1 className="px-2 ">Toure Aboubacar</h1>
+                                    </a>
+                                    {/*<Language localActive={localActive}/>*/}
+                                </div>
+
                                 <h1 className="mt-2 font-semibold text-4xl text-gray">
-                                All Projects
+                                    All Projects
                                 </h1>
                             </div>
                         </div>
@@ -78,7 +87,7 @@ const Page = () => {
                 </div>
             </div>
         </div>
-            );
+    );
             };
 
-            export default Page;
+export default Page;

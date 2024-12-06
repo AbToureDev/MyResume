@@ -7,10 +7,11 @@ import {useTranslations} from "next-intl";
 import { motion } from "framer-motion";
 import {cardVariants, card} from "../../animation";
 import {experiences} from "../../utils/utils";
+import {useLocale} from "use-intl";
 
 const RightSideBar = () => {
     const t = useTranslations('')
-
+    const localActive = useLocale();
     return (
         <motion.div className='sm:flex sm:flex-col gap-5 overflow-y-scroll h-full' initial='hidden'
                     animate="show"
@@ -148,7 +149,7 @@ const RightSideBar = () => {
 
             <section>
                 <div className={'flex gap-2 items-center font-bold'}>
-                    <Link href="/project" download>View Full Project Archive </Link>
+                    <Link href={`/${localActive}/project`} download>View Full Project Archive </Link>
                     <AiOutlineArrowRight size={25} className={'-rotate-45'}/>
                 </div>
             </section>
