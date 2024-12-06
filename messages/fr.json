@@ -1,0 +1,25 @@
+{
+  "page": {
+    "title": "Ingénieur Senior FullStack Spécialiste Backend",
+    "desc": "Je conçois des solutions backend évolutives, performantes et sécurisées, garantissant une intégration transparente.",
+    "ABOUT": "À propos",
+    "EXPERIENCE": "Expériences",
+    "PROJECTS": "Réalisations"
+  },
+
+  "about_me": {
+    "description1": "Je suis un ingénieur FullStack senior avec une forte spécialisation dans le développement backend. Avec des années d'expérience dans la construction d'applications robustes et évolutives, j'excelle dans la conception et la mise en œuvre d'API, la gestion d'architectures microservices et la garantie d'une communication transparente entre les systèmes. Mon expertise dans des technologies telles que Node.js, NestJS et TypeScript me permet de créer des solutions performantes, sécurisées et faciles à maintenir, adaptées aux besoins des clients.",
+    "description2": "Passionné par la création de valeur, je me concentre sur l'élaboration de solutions qui ne sont pas seulement fonctionnelles mais aussi alignées sur les objectifs de l'entreprise. Au-delà du codage, je suis un défenseur de l'architecture propre et des meilleures pratiques, me tenant constamment au courant des dernières tendances de l'industrie. Qu'il s'agisse de construire un nouveau système à partir de zéro ou d'optimiser des infrastructures existantes, je m'épanouis dans la résolution de défis complexes avec des solutions innovantes.",
+    "description3": "Lorsque je ne code pas, vous pouvez me trouver en train d'explorer de nouveaux outils technologiques, d'encadrer des développeurs juniors ou de réfléchir à des idées pour des produits numériques percutants. Créons ensemble quelque chose d'extraordinaire !"
+  },
+
+  "footer": {
+    "copyright": "© 2024 Toure App. Tous droits réservés."
+  },
+  "contacts": {
+    "github": " Voir mon GitHub",
+    "linkedin": "Connectez-vous sur LinkedIn",
+    "instagram": " Suivez-moi sur Instagram",
+    "gmail": " Contacter moi sur Gmail"
+  }
+}

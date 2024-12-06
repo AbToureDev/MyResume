@@ -1,0 +1,27 @@
+{
+  "page": {
+    "title": "Senior FullStack Engineer Backend Specialist",
+    "desc": "I craft scalable, high-performing, and secure backend solutions, ensuring seamless integration.",
+    "ABOUT": "About",
+    "EXPERIENCE": "Experiences",
+    "PROJECTS": "Projects"
+  },
+
+  "about_me": {
+    "description1": "I am a Senior FullStack Engineer with a strong specialization in backend development. With years of experience building robust and scalable applications, I excel in designing and implementing APIs, managing microservices architectures, and ensuring seamless communication between systems. My expertise in technologies like Node.js, NestJS, and TypeScript allows me to create performant, secure, and maintainable solutions tailored to client needs.",
+    "description2": "Passionate about delivering value, I focus on crafting solutions that are not only functional but also aligned with business goals. Beyond coding, I am an advocate for clean architecture and best practices, constantly staying updated on the latest industry trends. Whether it’s building a new system from scratch or optimizing existing infrastructures, I thrive on solving complex challenges with innovative solutions.",
+    "description3":"When I’m not coding, you can find me exploring new tech tools, mentoring junior developers, or brainstorming ideas for impactful digital products. Let’s create something amazing together!"
+  },
+
+  "contacts": {
+    "github": "View my GitHub",
+    "linkedin": "Connect with me on LinkedIn",
+    "instagram": "Follow me on Instagram",
+    "gmail": "Contact me on Gmail"
+  },
+
+  "footer": {
+    "copyright": "© 2024 Toure App. All rights reserved."
+  }
+
+}
