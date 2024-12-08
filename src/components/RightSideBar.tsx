@@ -12,44 +12,44 @@ import {useLocale} from "use-intl";
 const RightSideBar = () => {
     const t = useTranslations<string>();
     const localActive = useLocale();
-    // const handleDownload = () => {
-    //     const pdfUrl = localActive === 'en' ? "Toure_Aboubacar_Software_engineer.pdf" : "Aboubacar_Touré_ingenieur_logiciel.pdf";
-    //     const link = document.createElement("a");
-    //     link.href = pdfUrl;
-    //     if (localActive === 'en') {
-    //         // specify the filename
-    //         link.download = "/public/Toure_Aboubacar_Software_engineer.pdf";
-    //     }else {
-    //         // specify the filename
-    //         link.download = "/public/Aboubacar_Touré_ingenieur_logiciel.pdf";
-    //     }
-    //     document.body.appendChild(link);
-    //     link.click();
-    //     document.body.removeChild(link);
-    // }
     const handleDownload = () => {
-        // Définir le nom du fichier selon la langue active
-        const pdfUrl = localActive === 'en'
-            ? "/public/Toure_Aboubacar_Software_engineer.pdf"
-            : "/public/Aboubacar_Touré_ingenieur_logiciel.pdf";
-
+        const pdfUrl = localActive === 'en' ? "Toure_Aboubacar_Software_engineer.pdf" : "Aboubacar_Touré_ingenieur_logiciel.pdf";
         const link = document.createElement("a");
         link.href = pdfUrl;
-
-        // Définir le nom du fichier téléchargé
-        link.download = localActive === 'en'
-            ? "Toure_Aboubacar_Software_Engineer.pdf"
-            : "Aboubacar_Touré_Ingénieur_Logiciel.pdf";
-
-        // Ajouter le lien temporaire au document
+        if (localActive === 'en') {
+            // specify the filename
+            link.download = "/public/Toure_Aboubacar_Software_engineer.pdf";
+        }else {
+            // specify the filename
+            link.download = "/public/Aboubacar_Touré_ingenieur_logiciel.pdf";
+        }
         document.body.appendChild(link);
-
-        // Simuler un clic pour déclencher le téléchargement
         link.click();
-
-        // Supprimer le lien temporaire après le clic
         document.body.removeChild(link);
-    };
+    }
+    // const handleDownload = () => {
+    //     // Définir le nom du fichier selon la langue active
+    //     const pdfUrl = localActive === 'en'
+    //         ? "/public/Toure_Aboubacar_Software_engineer.pdf"
+    //         : "/public/Aboubacar_Touré_ingenieur_logiciel.pdf";
+    //
+    //     const link = document.createElement("a");
+    //     link.href = pdfUrl;
+    //
+    //     // Définir le nom du fichier téléchargé
+    //     link.download = localActive === 'en'
+    //         ? "Toure_Aboubacar_Software_Engineer.pdf"
+    //         : "Aboubacar_Touré_Ingénieur_Logiciel.pdf";
+    //
+    //     // Ajouter le lien temporaire au document
+    //     document.body.appendChild(link);
+    //
+    //     // Simuler un clic pour déclencher le téléchargement
+    //     link.click();
+    //
+    //     // Supprimer le lien temporaire après le clic
+    //     document.body.removeChild(link);
+    // };
 
     return (
         <motion.div className='sm:flex sm:flex-col gap-5 overflow-y-scroll h-full' initial='hidden'
