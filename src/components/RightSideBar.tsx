@@ -6,29 +6,68 @@ import Footer from "@/components/Footer";
 import {useTranslations} from "next-intl";
 import { motion } from "framer-motion";
 import {cardVariants, card} from "../../animation";
-import {experiences} from "../../utils/utils";
+import {experiences, posts, realisations} from "../../utils/utils";
 import {useLocale} from "use-intl";
 
 const RightSideBar = () => {
-    const t = useTranslations('')
+    const t = useTranslations<string>();
     const localActive = useLocale();
+    // const handleDownload = () => {
+    //     const pdfUrl = localActive === 'en' ? "Toure_Aboubacar_Software_engineer.pdf" : "Aboubacar_Touré_ingenieur_logiciel.pdf";
+    //     const link = document.createElement("a");
+    //     link.href = pdfUrl;
+    //     if (localActive === 'en') {
+    //         // specify the filename
+    //         link.download = "/public/Toure_Aboubacar_Software_engineer.pdf";
+    //     }else {
+    //         // specify the filename
+    //         link.download = "/public/Aboubacar_Touré_ingenieur_logiciel.pdf";
+    //     }
+    //     document.body.appendChild(link);
+    //     link.click();
+    //     document.body.removeChild(link);
+    // }
+    const handleDownload = () => {
+        // Définir le nom du fichier selon la langue active
+        const pdfUrl = localActive === 'en'
+            ? "/public/Toure_Aboubacar_Software_engineer.pdf"
+            : "/public/Aboubacar_Touré_ingenieur_logiciel.pdf";
+
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+
+        // Définir le nom du fichier téléchargé
+        link.download = localActive === 'en'
+            ? "Toure_Aboubacar_Software_Engineer.pdf"
+            : "Aboubacar_Touré_Ingénieur_Logiciel.pdf";
+
+        // Ajouter le lien temporaire au document
+        document.body.appendChild(link);
+
+        // Simuler un clic pour déclencher le téléchargement
+        link.click();
+
+        // Supprimer le lien temporaire après le clic
+        document.body.removeChild(link);
+    };
+
     return (
         <motion.div className='sm:flex sm:flex-col gap-5 overflow-y-scroll h-full' initial='hidden'
                     animate="show"
                     variants={cardVariants}>
             <section className="p-5" id="abouts">
                 <h1 className={'sm:hidden py-2 text-xl'}>
-                    ABOUT
+                    {t("page.ABOUT")}
                 </h1>
-                <motion.div className="flex flex-wrap gap-4 text-[17px]" variants={card}>
+                <motion.div className="flex flex-wrap gap-4 " variants={card}>
                     <p>
-                        {t('about_me.description1')}
+                        {t("about_me.description1")}
                     </p>
                     <p>
-                        {t('about_me.description2')}
+                        {t("about_me.description2")}
                     </p>
                     <p>
-                        {t('about_me.description3')}
+                        {t("about_me.description3")}
                     </p>
                 </motion.div>
             </section>
@@ -45,7 +84,8 @@ const RightSideBar = () => {
                                 <div className="sm:w-[80%] ">
                                     <div className={'flex gap-2 items-center group-hover:text-emerald'}><h2
                                         className="font-bold">{experience.title} at {experience.company}</h2>
-                                        <AiOutlineArrowRight size={15} className={'-rotate-45'}/></div>
+                                        <AiOutlineArrowRight size={15} className={'-rotate-45'}/>
+                                    </div>
                                     <p className={'items-center text-gray'}>{experience.description}</p>
                                     <p className="sm:w-[70%] flex flex-wrap w-full items-center gap-5 py-4">
                                         {experience.technologies.map((tech, index) => (
@@ -61,101 +101,70 @@ const RightSideBar = () => {
                 }
             </section>
             <section>
-                <div className={'flex gap-2 items-center font-bold'}>
-                    <a href="" download>View Full Resume </a>
+                <div className={'flex gap-2 items-center font-bold cursor-pointer hover:text-emerald'}>
+                    <p onClick={handleDownload}>{t("part.View_Full_Resume")}</p>
                     <AiOutlineArrowRight size={25} className={'-rotate-45'}/>
                 </div>
             </section>
             <section id="projects">
                 <h1 className="sm:hidden p-2 text-xl">Projects</h1>
-                <div className="experience group">
-                    <div className="w-full sm:flex gap-8">
-                        <img
-                            src="https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmVhY3R8ZW58MHx8MHx8fDA%3D"
-                            alt="project image"
-                            className=" sm:w-[100px] sm:h-[100px] w-[500px] h-[150px] object-cover"/>
-                        <div className="sm:w-[60%]">
-                            <div className={'flex gap-2 items-center font-bold group-hover:text-emerald'}><h2>Senior Backend Enginee,
-                                Codingart</h2>
-                                <AiOutlineArrowRight size={15} className={'-rotate-45'}/></div>
-                            <p className={'items-center text-gray'}>
-                                voluptatum. Aliquam aliquid aut deserunt dolore dolorem, doloribus eius et ex facilis
-                                impedit ipsa officiis perspiciatis placeat quibusdam quis quisquam quos reiciendis rem
-                                temporibus tenetur unde vero voluptatum. Dignissimos dolorem modi possimus quae
-                                repudiandae!
-                            </p>
-                            <div className="sm:hidden flex w-full items-center gap-7 py-4 overflow-x-scroll">
-                                <h1 className="lang">javascript</h1>
-                                <h1 className="lang">Nestjs</h1>
-                                <h1 className="lang">Nestjs</h1>
-                                <h1 className="lang">Nestjs</h1>
+                {
+                    realisations.slice(0, 3).map((realisations, index) => (
+                        <div className="experience group" key={index}>
+                            <div className="w-full sm:flex gap-8">
+                                <img
+                                    src={realisations.image}
+                                    alt="project image"
+                                    className=" sm:w-[100px] sm:h-[100px] w-[500px] h-[150px] object-cover"/>
+                                <div className="sm:w-[60%]">
+                                    <div className={'flex gap-2 items-center font-bold group-hover:text-emerald'}>
+                                        <h2>{realisations.title}, {realisations.company}</h2>
+                                        <AiOutlineArrowRight size={15} className={'-rotate-45'}/>
+                                    </div>
+                                    <p className={'items-center text-gray'}>
+                                        {realisations.description}
+                                    </p>
+                                    <div className="sm:hidden flex w-full items-center gap-7 py-4">
+                                    <p className="sm:w-[70%] flex flex-wrap w-full items-center gap-5 py-4">
+                                        {realisations.technologies.map((tech, index) => (
+                                            <span key={index} className="lang">{tech}</span>
+                                        ))}
+                                    </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    ))
+                }
 
-                <div className="experience">
-                    <div className="w-full sm:flex gap-8">
-                        <img
-                            src="https://images.unsplash.com/photo-1566241440091-ec10de8db2e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVhY3R8ZW58MHx8MHx8fDA%3D"
-                            alt="project image"
-                            className=" sm:w-[100px] sm:h-[100px] w-[500px] h-[150px] object-cover"/>
-                        <div className="sm:w-[60%]">
-                            <div className={'flex gap-2 items-center font-bold'}><h2>Senior Backend Enginee,
-                                Codingart</h2>
-                                <AiOutlineArrowRight size={15} className={'-rotate-45'}/></div>
-                            <p className={'items-center'}>
-                                voluptatum. Aliquam aliquid aut deserunt dolore dolorem, doloribus eius et ex facilis
-                                impedit ipsa officiis perspiciatis placeat quibusdam quis quisquam quos reiciendis rem
-                                temporibus tenetur unde vero voluptatum. Dignissimos dolorem modi possimus quae
-                                repudiandae!
-                            </p>
-                            <div className="sm:hidden flex w-full items-center gap-7 py-4 overflow-x-scroll">
-                                <h1 className="lang">javascript</h1>
-                                <h1 className="lang">Nestjs</h1>
-                                <h1 className="lang">Nestjs</h1>
-                                <h1 className="lang">Nestjs</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="experience">
-                    <div className="w-full sm:flex gap-8">
-                        <img
-                            src="https://plus.unsplash.com/premium_photo-1678566154673-a728037f3f00?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cmVhY3R8ZW58MHx8MHx8fDA%3D"
-                            alt="project image"
-                            className=" sm:w-[100px] sm:h-[100px] w-[500px] h-[150px] object-cover"/>
-                        <div className="sm:w-[60%]">
-                            <div className={'flex gap-2 items-center font-bold'}><h2>Senior Backend Enginee,
-                                Codingart</h2>
-                                <AiOutlineArrowRight size={15} className={'-rotate-45'}/></div>
-                            <p className={'items-center'}>
-                                voluptatum. Aliquam aliquid aut deserunt dolore dolorem, doloribus eius et ex facilis
-                                impedit ipsa officiis perspiciatis placeat quibusdam quis quisquam quos reiciendis rem
-                                temporibus tenetur unde vero voluptatum. Dignissimos dolorem modi possimus quae
-                                repudiandae!
-                            </p>
-                            <div className="sm:hidden flex w-full items-center gap-7 py-4 overflow-x-scroll">
-                                <h1 className="lang">javascript</h1>
-                                <h1 className="lang">Nestjs</h1>
-                                <h1 className="lang">Nestjs</h1>
-                                <h1 className="lang">Nestjs</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </section>
 
             <section>
-                <div className={'flex gap-2 items-center font-bold'}>
-                    <Link href={`/${localActive}/project`} download>View Full Project Archive </Link>
+                <div className={'flex gap-2 items-center font-bold hover:text-emerald'}>
+                    <Link href={`/${localActive}/project`} download>{t("part.View_Full_Project_Archive")}</Link>
                     <AiOutlineArrowRight size={25} className={'-rotate-45'}/>
                 </div>
             </section>
 
             <section>
-                <h1>lAST SEction</h1>
+                <h1>{t("part.my_posts")}s</h1>
+                {
+                    posts.slice(0, 3).map((post, index) => (
+                        <a href={post.link} target='_blank' className="experience group" key={index}>
+                            <div className="w-full sm:flex sm:items-center gap-5 group-hover:text-emerald">
+                                <img
+                                    src={post?.image}
+                                    alt="post image"
+                                    className=" sm:w-[100px] sm:h-[100px] w-[500px] h-[150px] object-cover"/>
+                                <div className="flex flex-col">
+                                    <h2>{post?.year}</h2>
+                                    <p>{post?.title}</p>
+                                </div>
+                                <AiOutlineArrowRight size={25} className={'-rotate-45'}/>
+                            </div>
+                        </a>
+                    ))
+                }
             </section>
             <Footer/>
         </motion.div>

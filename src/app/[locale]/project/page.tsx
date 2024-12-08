@@ -3,12 +3,12 @@ import React from 'react';
 import {AiOutlineArrowRight} from "react-icons/ai";
 import Language from "@/components/Language";
 import {useLocale} from "use-intl";
+import {realisations} from "../../../../utils/utils";
+import {useTranslations} from "next-intl";
 
-const people = [
-    { name: '2024', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
-    // More people...
-]
 const Page = () => {
+    const t = useTranslations<string>();
+
     // const localActive = useLocale();
     return (
         <div className="h-screen text-white">
@@ -27,7 +27,7 @@ const Page = () => {
                                 </div>
 
                                 <h1 className="mt-2 font-semibold text-4xl text-gray">
-                                    All Projects
+                                    {t("table.All_Projects")}
                                 </h1>
                             </div>
                         </div>
@@ -39,41 +39,44 @@ const Page = () => {
                                         <tr>
                                             <th scope="col"
                                                 className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-0">
-                                                Year
+                                                {t("table.year")}
                                             </th>
                                             <th scope="col"
                                                 className="px-3 py-3.5 text-left text-sm font-semibold text-white">
-                                                Project
+                                                {t("table.project")}
                                             </th>
                                             <th scope="col"
                                                 className="px-3 py-3.5 text-left text-sm font-semibold text-white">
-                                                Made at
+                                                {t("table.made_at")}
                                             </th>
                                             <th scope="col"
                                                 className="px-3 py-3.5 text-left text-sm font-semibold text-white">
-                                                Built with
+                                                {t("table.build_with")}
                                             </th>
                                             <th scope="col"
                                                 className="px-3 py-3.5 text-left text-sm font-semibold text-white">
-                                                Link
+                                                {t("table.link")}
                                             </th>
-                                            {/*<th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-0 text-white">*/}
-                                            {/*    <span className="sr-only">Edit</span>*/}
-                                            {/*</th>*/}
                                         </tr>
                                         </thead>
                                         <tbody className="divide-y divide-gray-800">
-                                        {people.map((person) => (
-                                            <tr key={person.email}>
-                                                <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
-                                                    {person.name}
+                                        {realisations.map((realisations,index) => (
+                                            <tr key={index}>
+                                                <td className="whitespace-nowrap py-7 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
+                                                    {realisations.year}
                                                 </td>
-                                                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">{person.title}</td>
-                                                <td className="whitespace-nowrap px-3 py-4 text-sm text-green">{person.email}</td>
-                                                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">{person.role}</td>
-                                                <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                                                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">{realisations.title}</td>
+                                                <td className="whitespace-nowrap px-3 py-4 text-sm text-green">{realisations.company}</td>
+                                                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">
+                                                        <p className="flex flex-wrap w-full items-center gap-5">
+                                                            {realisations.technologies?.map((tech, index) => (
+                                                                <span key={index} className="lang">{tech}</span>
+                                                            ))}
+                                                        </p>
+                                                </td>
+                                                <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-left text-sm font-medium sm:pr-0">
                                                     <a href="#" className="text-indigo-400 hover:text-indigo-300">
-                                                        Edit<span className="sr-only">, {person.name}</span>
+                                                        {realisations.title}
                                                     </a>
                                                 </td>
                                             </tr>

@@ -24,7 +24,7 @@ const LeftSideBar = () => {
                     variants={cardVariants}
         >
             <motion.section id='about' variants={card}>
-                <h2 className={'w-full sm:text-[80px] text-[27px] font-bold'}>
+                <h2 className={'w-full sm:text-[80px] text-[17px] font-bold'}>
                     Toure Aboubacar
                 </h2>
 

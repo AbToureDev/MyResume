@@ -16,10 +16,23 @@
   "footer": {
     "copyright": "© 2024 Toure App. Tous droits réservés."
   },
+  "table": {
+    "All_Projects": "Tous les projets",
+    "year": "Année",
+    "project": "Projet",
+    "build_with": "Construire avec",
+    "made_at": "Fait chez",
+    "link": "Lien"
+  },
   "contacts": {
     "github": " Voir mon GitHub",
     "linkedin": "Connectez-vous sur LinkedIn",
     "instagram": " Suivez-moi sur Instagram",
     "gmail": " Contacter moi sur Gmail"
+  },
+  "part":{
+    "View_Full_Project_Archive": "Voir l'archive complète des projets",
+    "View_Full_Resume":"Voir le CV complet",
+    "my_posts": "Mes articles"
   }
 }

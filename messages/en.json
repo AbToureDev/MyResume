@@ -20,8 +20,22 @@
     "gmail": "Contact me on Gmail"
   },
 
+  "table": {
+    "All_Projects": "All Projects",
+    "year": "Year",
+    "project": "Project",
+    "build_with": "Build with",
+    "made_at": "Made at",
+    "link": "Link"
+  },
+
   "footer": {
     "copyright": "© 2024 Toure App. All rights reserved."
-  }
+  },
 
+  "part":{
+    "View_Full_Project_Archive": "View Full Project Archive",
+    "View_Full_Resume":"View Full Resume",
+    "my_posts": "My posts"
+  }
 }
