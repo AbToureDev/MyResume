@@ -156,7 +156,7 @@ const RightSideBar = () => {
             </section>
 
             <section>
-                <h1>{t("part.my_posts")}s</h1>
+                <h1>{t("part.my_posts")}</h1>
                 {
                     posts.slice(0, 3).map((post, index) => (
                         <a href={post.link} target='_blank' className="experience group" key={index}>

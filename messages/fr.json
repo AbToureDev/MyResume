@@ -38,35 +38,6 @@
     "View_Full_Project_Archive": "Voir l'archive complète des projets",
     "View_Full_Resume":"Voir le CV complet",
     "my_posts": "Mes articles"
-  },
-
-  "experiences": [
-    {
-      "year": "2022 - PRESENT",
-      "title": "Ingénieur Backend Senior",
-      "company": "Codingart",
-      "description": "Responsable de la construction et de la maintenance des systèmes backend avec Node.js et NestJS.",
-      "technologies": [
-        "Développeur Backend",
-        "NodeJs",
-        "NestJS",
-        "ExpressJs",
-        "Springboot"
-      ]
-    },
-    {
-      "year": "2022-2023",
-      "title": "Ingénieur Backend Senior",
-      "company": "Codingart",
-      "description": "Dirigé une équipe de développeurs pour créer des applications évolutives.",
-      "technologies": [
-        "Développeur Backend",
-        "NodeJs",
-        "NestJS",
-        "ExpressJs",
-        "Springboot"
-      ]
-    }
-  ]
+  }
 
 }
