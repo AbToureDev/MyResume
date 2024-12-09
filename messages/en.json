@@ -32,10 +32,43 @@
   "footer": {
     "copyright": "© 2024 Toure App. All rights reserved."
   },
+  "language": {
+    "English": "English",
+    "French": "French"
+  },
 
   "part":{
     "View_Full_Project_Archive": "View Full Project Archive",
     "View_Full_Resume":"View Full Resume",
     "my_posts": "My posts"
-  }
+  },
+
+  "experiences": [
+    {
+      "year": "2022 - PRESENT",
+      "title": "Senior Backend Engineer",
+      "company": "Codingart",
+      "description": "Responsible for building and maintaining backend systems with Node.js and NestJS.",
+      "technologies": [
+        "Backend Developer",
+        "NodeJs",
+        "NestJS",
+        "ExpressJs",
+        "Springboot"
+      ]
+    },
+    {
+      "year": "2022-2023",
+      "title": "Senior Backend Engineer",
+      "company": "Codingart",
+      "description": "Led a team of developers to create scalable applications.",
+      "technologies": [
+        "Backend Developer",
+        "NodeJs",
+        "NestJS",
+        "ExpressJs",
+        "Springboot"
+      ]
+    }
+  ]
 }

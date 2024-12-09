@@ -1,17 +1,18 @@
 'use client'
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {AiOutlineArrowRight} from "react-icons/ai";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import {useTranslations} from "next-intl";
 import { motion } from "framer-motion";
 import {cardVariants, card} from "../../animation";
-import {experiences, posts, realisations} from "../../utils/utils";
+import {experiencesEn, experiencesFr, posts, realisations} from "../../utils/utils";
 import {useLocale} from "use-intl";
 
 const RightSideBar = () => {
     const t = useTranslations<string>();
     const localActive = useLocale();
+    const [experiences, setExperiences ] = useState([]);
     const handleDownload = () => {
         const pdfUrl = localActive === 'en' ? "Toure_Aboubacar_Software_engineer.pdf" : "Aboubacar_Touré_ingenieur_logiciel.pdf";
         const link = document.createElement("a");
@@ -51,15 +52,23 @@ const RightSideBar = () => {
     //     document.body.removeChild(link);
     // };
 
+    useEffect(() => {
+        if (localActive === 'en') {
+            setExperiences(experiencesEn);
+        }else {
+            setExperiences(experiencesFr)
+        }
+    },[localActive] )
+    console.log(experiences)
     return (
-        <motion.div className='sm:flex sm:flex-col gap-5 overflow-y-scroll h-full' initial='hidden'
+        <motion.div className='sm:flex sm:flex-col overflow-y-scroll h-full' initial='hidden'
                     animate="show"
                     variants={cardVariants}>
             <section className="p-5" id="abouts">
-                <h1 className={'sm:hidden py-2 text-xl'}>
+                <h1 className={'sm:hidden py-2 text-lg'}>
                     {t("page.ABOUT")}
                 </h1>
-                <motion.div className="flex flex-wrap gap-4 " variants={card}>
+                <motion.div className="flex flex-wrap gap-1" variants={card}>
                     <p>
                         {t("about_me.description1")}
                     </p>
@@ -78,7 +87,7 @@ const RightSideBar = () => {
                     experiences.map((experience, index) => (
                         <div key={index} className="experience group">
                             <div className="w-full sm:flex gap-8 ">
-                                <h3 className="sm:text-start text-center text-gray">
+                                <h3 className="sm:text-start text-nowrap text-xs text-center text-gray">
                                     {experience.year}
                                 </h3>
                                 <div className="sm:w-[80%] ">
@@ -156,11 +165,14 @@ const RightSideBar = () => {
                                     src={post?.image}
                                     alt="post image"
                                     className=" sm:w-[100px] sm:h-[100px] w-[500px] h-[150px] object-cover"/>
-                                <div className="flex flex-col">
-                                    <h2>{post?.year}</h2>
-                                    <p>{post?.title}</p>
+                                <div className="flex items-center">
+                                    <div className="flex flex-col">
+                                        <h2>{post?.year}</h2>
+                                        <p>{post?.title}</p>
+                                    </div>
+                                    <AiOutlineArrowRight size={25} className={'-rotate-45'}/>
                                 </div>
-                                <AiOutlineArrowRight size={25} className={'-rotate-45'}/>
+
                             </div>
                         </a>
                     ))
