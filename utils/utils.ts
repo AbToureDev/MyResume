@@ -16,12 +16,12 @@ export const navLink = [
         label: 'PROJECTS'
     },
 ];
-export  const experiences = [
+export  const experiencesEn = [
     {
-        "year": "2022 - PRESENT",
+        "year": "2023-PRESENT",
         "title": "Senior Backend Engineer",
-        "company": "Codingart",
-        "description": "Voluptatum. Aliquam aliquid aut deserunt dolore dolorem, doloribus eius et ex facilis harum id impedit ipsa officiis perspiciatis placeat quibusdam quis quisquam quos reiciendis rem sequi temporibus tenetur unde vero voluptatum. Dignissimos dolorem modi possimus quae repudiandae! Assumenda at, blanditiis commodi, consectetur consequuntur dolorem doloribus ducimus ea eaque eveniet ex fugit laboriosam modi molestias nostrum obcaecati possimus rem sed veritatis.",
+        "company": "Codingart morocco",
+        "description": "Developing high-performance APIs with Nest.js, Java and Spring Boot, designing UML diagrams to structure complex solutions, implementing microservices architectures, writing unit tests to guarantee code quality and optimizing CI/CD pipelines for reliable deployments.",
         "technologies": [
             "Backend Developer",
             "NodeJs",
@@ -33,31 +33,44 @@ export  const experiences = [
 
     {
         "year": "2022-2023",
-        "title": "Senior Backend Engineer",
-        "company": "Codingart",
-        "description": "Voluptatum. Aliquam aliquid aut deserunt dolore dolorem, doloribus eius et ex facilis harum id impedit ipsa officiis perspiciatis placeat quibusdam quis quisquam quos reiciendis rem sequi temporibus tenetur unde vero voluptatum. Dignissimos dolorem modi possimus quae repudiandae! Assumenda at, blanditiis commodi, consectetur consequuntur dolorem doloribus ducimus ea eaque eveniet ex fugit laboriosam modi molestias nostrum obcaecati possimus rem sed veritatis.",
+        "title": "Fullstack software engineer",
+        "company": "Muutaa Quebec",
+        "description": "Design and development of high-performance full-stack applications with Node.js, Nest.js and Next.js, creation of optimized databases with PostgreSQL, integration of RESTful and GraphQL APIs, versioning management with Git, and continuous optimization of functionalities to improve performance and user experience.",
         "technologies": [
-            "Backend Developer",
+            "fullStack Developer",
             "NodeJs",
-            "NestJS",
             "ExpressJs",
-            "Springboot",
+            "NestJS",
+            "Next.js",
+            "React.js",
         ]
+    },
+
+];
+export  const experiencesFr = [
+    {
+        "year": "2023-PRÉSENT",
+        "title": "Ingénieur Backend Senior",
+        "company": "Codingart Maroc",
+        "description": "Développement d'APIs performantes avec Nest.js, Java et Spring Boot, conception de diagrammes UML pour structurer des solutions complexes, mise en œuvre d’architectures microservices, rédaction de tests unitaires pour garantir la qualité du code et optimisation des pipelines CI/CD pour des déploiements fiables.",
+        "technologies": ["Développeur Backend", "NodeJs", "NestJS", "ExpressJs", "Springboot"]
     },
 
     {
         "year": "2022-2023",
-        "title": "Senior Backend Engineer",
-        "company": "Codingart",
-        "description": "Voluptatum. Aliquam aliquid aut deserunt dolore dolorem, doloribus eius et ex facilis harum id impedit ipsa officiis perspiciatis placeat quibusdam quis quisquam quos reiciendis rem sequi temporibus tenetur unde vero voluptatum. Dignissimos dolorem modi possimus quae repudiandae! Assumenda at, blanditiis commodi, consectetur consequuntur dolorem doloribus ducimus ea eaque eveniet ex fugit laboriosam modi molestias nostrum obcaecati possimus rem sed veritatis.",
+        "title": "Ingénieur logiciel fullstack",
+        "company": "Muutaa Quebec",
+        "description": "Conception et développement d’applications full-stack performantes avec Node.js, Nest.js et Next.js, création de bases de données optimisées avec PostgreSQL, intégration d’API RESTful et GraphQL, gestion du versioning avec Git, et optimisation continue des fonctionnalités pour améliorer les performances et l’expérience utilisateur." ,
         "technologies": [
-            "Backend Developer",
+            "fullStack Développeur",
             "NodeJs",
-            "NestJS",
             "ExpressJs",
-            "Springboot",
+            "NestJS",
+            "Next.js",
+            "React.js",
         ]
     },
+
 ];
 
 export const realisations = [

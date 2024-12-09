@@ -4,7 +4,7 @@ import RightSideBar from "@/components/RightSideBar";
 
 export default function Home() {
   return (
-    <main className="sm:flex gap-3 min-h-screen leading-relaxed lg:h-screen lg:overflow-hidden lg:items-center sm:flex-row  p-7 text-white font-sans">
+    <main className="sm:flex gap-3 min-h-screen leading-relaxed lg:h-screen lg:overflow-hidden lg:items-center sm:flex-row p-5 text-sm text-white font-sans">
       <LeftSideBar/>
       <RightSideBar/>
     </main>
