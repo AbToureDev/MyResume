@@ -8,11 +8,17 @@ import { motion } from "framer-motion";
 import {cardVariants, card} from "../../animation";
 import {experiencesEn, experiencesFr, posts, realisations} from "../../utils/utils";
 import {useLocale} from "use-intl";
-
+interface Experience {
+    year: string;
+    title: string;
+    company: string;
+    description: string;
+    technologies: string[];
+}
 const RightSideBar = () => {
     const t = useTranslations<string>();
     const localActive = useLocale();
-    const [experiences, setExperiences ] = useState([]);
+    const [experiences, setExperiences ] = useState<Experience[]>([]);
     const handleDownload = () => {
         const pdfUrl = localActive === 'en' ? "Toure_Aboubacar_Software_engineer.pdf" : "Aboubacar_Touré_ingenieur_logiciel.pdf";
         const link = document.createElement("a");
