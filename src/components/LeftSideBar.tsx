@@ -35,7 +35,7 @@ const LeftSideBar = () => {
                 </p>
 
                 <motion.section className='flex flex-col' variants={card}>
-                    <h2 className="py-1 text-xl">SKILLS</h2>
+                    <h2 className="py-1 text-xl">{t("page.SKILLS")}</h2>
                     <h2>Backend:</h2>
                     <p className="text-gray">Node.js, NestJS, Express.js, springBoot, PostgreSQL, MongoDB, MySQL</p>
                     <h2>Frontend:</h2>
