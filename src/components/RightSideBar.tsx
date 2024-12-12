@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import {useTranslations} from "next-intl";
 import { motion } from "framer-motion";
 import {cardVariants, card} from "../../animation";
-import {experiencesEn, experiencesFr, posts, realisations} from "../../utils/utils";
+import {experiencesEn, experiencesFr, posts, realisationsFr, realisationsEn} from "../../utils/utils";
 import {useLocale} from "use-intl";
 interface Experience {
     year: string;
@@ -15,10 +15,21 @@ interface Experience {
     description: string;
     technologies: string[];
 }
+
+interface Realizations {
+    year: string;
+    title: string;
+    company: string;
+    image:string;
+    description: string;
+    link:string;
+    technologies: string[];
+}
 const RightSideBar = () => {
     const t = useTranslations<string>();
     const localActive = useLocale();
     const [experiences, setExperiences ] = useState<Experience[]>([]);
+    const [realisations, setRealisations ] = useState<Realizations[]>([]);
     const handleDownload = () => {
         const pdfUrl = localActive === 'en' ? "Toure_Aboubacar_Software_engineer.pdf" : "Aboubacar_Touré_ingenieur_logiciel.pdf";
         const link = document.createElement("a");
@@ -34,38 +45,16 @@ const RightSideBar = () => {
         link.click();
         document.body.removeChild(link);
     }
-    // const handleDownload = () => {
-    //     // Définir le nom du fichier selon la langue active
-    //     const pdfUrl = localActive === 'en'
-    //         ? "/public/Toure_Aboubacar_Software_engineer.pdf"
-    //         : "/public/Aboubacar_Touré_ingenieur_logiciel.pdf";
-    //
-    //     const link = document.createElement("a");
-    //     link.href = pdfUrl;
-    //
-    //     // Définir le nom du fichier téléchargé
-    //     link.download = localActive === 'en'
-    //         ? "Toure_Aboubacar_Software_Engineer.pdf"
-    //         : "Aboubacar_Touré_Ingénieur_Logiciel.pdf";
-    //
-    //     // Ajouter le lien temporaire au document
-    //     document.body.appendChild(link);
-    //
-    //     // Simuler un clic pour déclencher le téléchargement
-    //     link.click();
-    //
-    //     // Supprimer le lien temporaire après le clic
-    //     document.body.removeChild(link);
-    // };
 
     useEffect(() => {
         if (localActive === 'en') {
             setExperiences(experiencesEn);
+            setRealisations(realisationsEn)
         }else {
             setExperiences(experiencesFr)
+            setRealisations(realisationsFr)
         }
     },[localActive] )
-    console.log(experiences)
     return (
         <motion.div className='sm:flex sm:flex-col overflow-y-scroll h-full' initial='hidden'
                     animate="show"
@@ -87,16 +76,20 @@ const RightSideBar = () => {
                 </motion.div>
             </section>
 
-            <section className={'flex flex-col gap-6'} id="experience">
+            <motion.section className={'flex flex-col gap-6'} id="experience"
+                            initial='hidden'
+                            animate="show"
+                            variants={cardVariants}
+            >
                 <h1 className={'sm:hidden text-xl'}>Experience</h1>
                 {
                     experiences.map((experience, index) => (
                         <div key={index} className="experience group">
-                            <div className="w-full sm:flex gap-8 ">
-                                <h3 className="sm:text-start text-nowrap text-xs text-center text-gray">
+                            <div className="w-full sm:flex gap-8">
+                                <motion.h3 className="sm:text-start text-nowrap text-xs text-center text-gray" variants={card}>
                                     {experience.year}
-                                </h3>
-                                <div className="sm:w-[80%] ">
+                                </motion.h3>
+                                <motion.div className="sm:w-[80%]" variants={card}>
                                     <div className={'flex gap-2 items-center group-hover:text-emerald'}><h2
                                         className="font-bold">{experience.title} at {experience.company}</h2>
                                         <AiOutlineArrowRight size={15} className={'-rotate-45'}/>
@@ -108,15 +101,15 @@ const RightSideBar = () => {
                                         ))}
                                     </p>
 
-                                </div>
+                                </motion.div>
                             </div>
                         </div>
 
                     ))
                 }
-            </section>
+            </motion.section>
             <section>
-                <div className={'flex gap-2 items-center font-bold cursor-pointer hover:text-emerald'}>
+                <div className={'flex gap-2 items-center font-bold text-lg py-4 cursor-pointer hover:text-emerald'}>
                     <p onClick={handleDownload}>{t("part.View_Full_Resume")}</p>
                     <AiOutlineArrowRight size={25} className={'-rotate-45'}/>
                 </div>
@@ -124,7 +117,7 @@ const RightSideBar = () => {
             <section id="projects">
                 <h1 className="sm:hidden p-2 text-xl">Projects</h1>
                 {
-                    realisations.slice(0, 3).map((realisations, index) => (
+                    realisations.slice(0, 4).map((realisations, index) => (
                         <div className="experience group" key={index}>
                             <div className="w-full sm:flex gap-8">
                                 <img
@@ -155,16 +148,16 @@ const RightSideBar = () => {
             </section>
 
             <section>
-                <div className={'flex gap-2 items-center font-bold hover:text-emerald'}>
+                <div className={'flex gap-2 items-center py-4 text-lg font-bold hover:text-emerald'}>
                     <Link href={`/${localActive}/project`} download>{t("part.View_Full_Project_Archive")}</Link>
                     <AiOutlineArrowRight size={25} className={'-rotate-45'}/>
                 </div>
             </section>
 
             <section>
-                <h1>{t("part.my_posts")}</h1>
+                <h1 className="py-2 text-lg text-emerald font-bold">{t("part.my_posts")}</h1>
                 {
-                    posts.slice(0, 3).map((post, index) => (
+                    posts.slice(0, 4).map((post, index) => (
                         <a href={post.link} target='_blank' className="experience group" key={index}>
                             <div className="w-full sm:flex sm:items-center gap-5 group-hover:text-emerald">
                                 <img

@@ -9,9 +9,9 @@
   },
 
   "about_me": {
-    "description1": "Je suis un ingénieur FullStack senior avec une forte spécialisation dans le développement backend. Avec des années d'expérience dans la construction d'applications robustes et évolutives, j'excelle dans la conception et la mise en œuvre d'API, la gestion d'architectures microservices et la garantie d'une communication transparente entre les systèmes. Mon expertise dans des technologies telles que Node.js, NestJS et TypeScript me permet de créer des solutions performantes, sécurisées et faciles à maintenir, adaptées aux besoins des clients.",
-    "description2": "Passionné par la création de valeur, je me concentre sur l'élaboration de solutions qui ne sont pas seulement fonctionnelles mais aussi alignées sur les objectifs de l'entreprise. Au-delà du codage, je suis un défenseur de l'architecture propre et des meilleures pratiques, me tenant constamment au courant des dernières tendances de l'industrie. Qu'il s'agisse de construire un nouveau système à partir de zéro ou d'optimiser des infrastructures existantes, je m'épanouis dans la résolution de défis complexes avec des solutions innovantes.",
-    "description3": "Lorsque je ne code pas, vous pouvez me trouver en train d'explorer de nouveaux outils technologiques, d'encadrer des développeurs juniors ou de réfléchir à des idées pour des produits numériques percutants. Créons ensemble quelque chose d'extraordinaire !"
+    "description1": "Je suis un développeur FullStack senior, spécialisé dans le backend, avec une solide expérience dans la création de systèmes robustes et évolutifs. Mon objectif est de vous accompagner dans la réalisation de vos projets en concevant des API performantes et sécurisées, adaptées à vos besoins spécifiques, tout en garantissant une intégration fluide avec votre front-end",
+    "description2": "Grâce à mon expertise en Node.js, NestJS et TypeScript, je peux vous aider à développer des solutions backend efficaces, faciles à maintenir et en phase avec vos objectifs. Je maîtrise également le développement front-end avec React et Next.js, ce qui me permet d'offrir des solutions complètes et parfaitement intégrées.",
+    "description3": "Je travaille toujours dans une logique de qualité, avec un code clair et structuré, en mettant l'accent sur les bonnes pratiques . Ensemble, nous pouvons transformer vos idées en outils performants et alignés avec vos ambitions."
   },
 
   "footer": {

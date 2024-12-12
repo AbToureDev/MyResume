@@ -9,9 +9,9 @@
   },
 
   "about_me": {
-    "description1": "I am a Senior FullStack Engineer with a strong specialization in backend development. With years of experience building robust and scalable applications, I excel in designing and implementing APIs, managing microservices architectures, and ensuring seamless communication between systems. My expertise in technologies like Node.js, NestJS, and TypeScript allows me to create performant, secure, and maintainable solutions tailored to client needs.",
-    "description2": "Passionate about delivering value, I focus on crafting solutions that are not only functional but also aligned with business goals. Beyond coding, I am an advocate for clean architecture and best practices, constantly staying updated on the latest industry trends. Whether it’s building a new system from scratch or optimizing existing infrastructures, I thrive on solving complex challenges with innovative solutions.",
-    "description3":"When I’m not coding, you can find me exploring new tech tools, mentoring junior developers, or brainstorming ideas for impactful digital products. Let’s create something amazing together!"
+    "description1": "I'm a senior FullStack developer, specializing in the backend, with solid experience in creating robust, scalable systems. My aim is to help you realize your projects by designing high-performance, secure APIs tailored to your specific needs, while guaranteeing seamless integration with your front-end.",
+    "description2": "Thanks to my expertise in Node.js, NestJS and TypeScript, I can help you develop backend solutions that are efficient, easy to maintain and in line with your objectives. I also master front-end development with React and Next.js, enabling me to offer complete and perfectly integrated solutions.",
+    "description3":"I always work with a focus on quality, with clear, structured code and an emphasis on best practices. Together, we can transform your ideas into high-performance tools aligned with your ambitions."
   },
 
   "contacts": {

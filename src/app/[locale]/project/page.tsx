@@ -1,15 +1,32 @@
 'use client'
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {AiOutlineArrowRight} from "react-icons/ai";
 import Language from "@/components/Language";
 import {useLocale} from "use-intl";
-import {realisations} from "../../../../utils/utils";
+import {realisationsEn, realisationsFr} from "../../../../utils/utils";
 import {useTranslations} from "next-intl";
-
+interface Realizations {
+    year: string;
+    title: string;
+    company: string;
+    image:string;
+    description: string;
+    link:string;
+    technologies: string[];
+}
 const Page = () => {
     const t = useTranslations<string>();
+    const localActive = useLocale();
+    const [realisations, setRealisations ] = useState<Realizations[]>([]);
 
-    // const localActive = useLocale();
+    useEffect(() => {
+        if (localActive === 'en') {
+            setRealisations(realisationsEn)
+        }else {
+            setRealisations(realisationsFr)
+        }
+    },[localActive] )
+
     return (
         <div className="h-screen text-white">
             <div className="mx-auto max-w-7xl">
@@ -75,7 +92,7 @@ const Page = () => {
                                                         </p>
                                                 </td>
                                                 <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-left text-sm font-medium sm:pr-0">
-                                                    <a href="#" className="text-indigo-400 hover:text-indigo-300">
+                                                    <a href={realisations.link} className="text-indigo-400 hover:text-indigo-300" target="_blank">
                                                         {realisations.title}
                                                     </a>
                                                 </td>
