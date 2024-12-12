@@ -28,7 +28,7 @@ const LeftSideBar = () => {
                     Toure Aboubacar
                 </h2>
 
-                <h2 className="font-bold max-sm:py-4 ">{t('page.title')}</h2>
+                <h2 className="font-bold py-3 ">{t('page.title')}</h2>
 
                 <p className="font-bold text-gray py-1">
                     {t('page.desc')}
