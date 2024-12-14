@@ -18,7 +18,7 @@ const LeftSideBar = () => {
         setActiveLink(label);
     };
     return (
-        <motion.div className=' relative shrink-0 sm:w-1/2 sm:flex sm:flex-col 2xl:gap-12 gap-4 h-full'
+        <motion.div className='relative shrink-0 sm:w-1/2 sm:flex sm:flex-col 2xl:gap-12 gap-4 h-full'
                     initial='hidden'
                     animate="show"
                     variants={cardVariants}
@@ -28,26 +28,26 @@ const LeftSideBar = () => {
                     Toure Aboubacar
                 </h2>
 
-                <h2 className="font-bold py-3 ">{t('page.title')}</h2>
+                <h2 className="font-bold py-2 ">{t('page.title')}</h2>
 
-                <p className="font-bold text-gray py-1">
+                <p className="font-bold text-gray py-0.5">
                     {t('page.desc')}
                 </p>
 
                 <motion.section className='flex flex-col' variants={card}>
                     <h2 className="py-1 text-xl">{t("page.SKILLS")}</h2>
-                    <h2>Backend:</h2>
+                    <h2 className="py-1">Backend:</h2>
                     <p className="text-gray">Node.js, NestJS, Express.js, springBoot, PostgreSQL, MongoDB, MySQL</p>
-                    <h2>Frontend:</h2>
+                    <h2 className="py-1" >Frontend:</h2>
                     <p className="text-gray">HTML, CSS, JavaScript, React, nextjs, Intégration des API dans des
                         applications frontend.
                     </p>
-                    <h2>Tools & DevOps:</h2>
+                    <h2 className="py-1" >Tools & DevOps:</h2>
                     <p className="text-gray">Docker, Kubernetes, Git, CI/CD (GitHub Actions)</p>
                 </motion.section>
             </motion.section>
 
-            <section className="flex flex-col w-[150px] gap-3 py-2">
+            <section className="flex flex-col w-[150px] gap-2 py-2">
                 {navLink?.map((nav) => (
                     <motion.div className="hidden sm:flex group sm:flex-col" key={nav.label} variants={card}>
                         <div
