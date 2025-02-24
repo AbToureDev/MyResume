@@ -126,7 +126,7 @@ const RightSideBar = () => {
                                     className=" sm:w-[100px] sm:h-[100px] w-[500px] h-[150px] object-cover"/>
                                 <div className="sm:w-[60%]">
                                     <div className={'flex gap-2 items-center font-bold group-hover:text-emerald'}>
-                                        <a href={realisations.link} >{realisations.title}, {realisations.company}</a>
+                                        <a href={realisations.link}  target="_blank">{realisations.title}, {realisations.company}</a>
                                         <AiOutlineArrowRight size={15} className={'-rotate-45'}/>
                                     </div>
                                     <p className={'items-center text-gray'}>
