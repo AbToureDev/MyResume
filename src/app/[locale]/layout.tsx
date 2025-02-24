@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import {Poppins, Roboto} from "next/font/google";
 import "../globals.css";
 import {NextIntlClientProvider} from "next-intl";
 import {getMessages} from "next-intl/server";
 import {routing} from "@/i18n/routing";
 import {notFound} from "next/navigation";
 
-const roboto = Roboto({
-    weight: ['400', '700'],
-    style: ['normal', 'italic'],
-    subsets: ['latin'],
-    display: 'swap',
+const poppins = Poppins({
+    subsets: ["latin"],
+    weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -32,7 +30,7 @@ export default async function RootLayout({children, params: {locale}
 
   return (
       <html lang={locale} className='bg-blue'>
-      <body className={roboto.className}>
+      <body className={poppins.className}>
       <NextIntlClientProvider messages={messages}>
         {children}
       </NextIntlClientProvider>

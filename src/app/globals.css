@@ -3,16 +3,28 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-    display: none;
+    display: block;
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 50px;
+    background:rgba(157,221,200,0.24);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #34d399;
+    border-radius: 100vh;
+    border: rgba(157,221,200,0.07);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(157,221,200,0.24);
 }
 
 @layer components {
-
     .lang {
     @apply bg-transparent px-3 py-1 rounded-[10px] text-emerald
 };
     .experience {
         @apply  w-full hover:bg-transparent2 hover:opacity-100 duration-300 rounded-[10px] py-4 px-5 opacity-80
     }
-
 }

@@ -18,7 +18,7 @@ const LeftSideBar = () => {
         setActiveLink(label);
     };
     return (
-        <motion.div className='relative shrink-0 sm:w-1/2 sm:flex sm:flex-col 2xl:gap-12 gap-4 h-full'
+        <motion.div className='relative shrink-0 sm:w-1/2 sm:flex sm:flex-col 2xl:gap-12 gap-4 h-full py-7'
                     initial='hidden'
                     animate="show"
                     variants={cardVariants}
